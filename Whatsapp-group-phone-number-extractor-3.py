@@ -23,7 +23,7 @@ def main():
     number_of_contact = 0
 
     # BeautifulSoup object html content as argument
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, "html.parser")
 
     # for loop goes through every span in html content
     for i in soup.find_all('span'):
@@ -32,7 +32,7 @@ def main():
             print (concatenate(i.get_text()))
             number_of_contact += 1
 
-    print ("The Total Number of Contacts are %s" % (number_of_contact,))
+    print ("The Total Number of Contacts are {}".format(number_of_contact))
 
 
 if __name__ == "__main__":
